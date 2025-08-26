@@ -1,24 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis proyectos</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENA MERCH</title>
+  <link rel="stylesheet" href="style.css">
+  <!--  Iconos de redes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="content">
-        <h1>Analisis y desarrollo de software</h1>
 
-        <!--la etiqueta target en HTML es un atributo que se utiliza en los enlaces (<a>) o formularios (<from>) para especificar como y donde debe abrirse el contenido vinculado o enviado-->
-        <a href="https://www.instagram.com/mateo_lopez/" target="_blank">My instagram</a>
-        <p class="subtitulo">JS introduccion</p>
-        <p class="hastag">mateo_lopez</p>
+  <!--  Encabezado con logo -->
+  <header>
+    <div class="logo-container">
+      <img src="imgs/logosena.png" alt="Logo SENA" class="logo">
+      <h1>SENA MERCH</h1>
+    </div>
 
-    </div><!--content-->
+    <nav class="nav-menu">
+      <button class="btn-nav">Inicio</button>
+      <button class="btn-nav">Pedidos</button>
+      <button class="btn-nav">Contacto</button>
+    </nav>
 
-    <script src="02-tipo-dato-string.js"></script>
-    
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </header>
+
+  <!-- 🔹 Contenedor principal -->
+  <main>
+    <h2>Tu Carrito de compras</h2>
+
+    <!-- 🔹 Sección de productos -->
+    <section class="card" id="productos-section">
+      <h3>Productos</h3>
+      <table id="tabla-productos">
+        <thead>
+          <tr>
+            <th>Productos</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Precio * Medida</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Cancelar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tomate</td>
+            <td>Fruta</td>
+            <td>Día del pedido</td>
+            <td>$6.500 * Kilo</td>
+            <td>(2) Kilos</td>
+            <td>$13.000</td>
+            <td><button class="btn-cancel">❌</button></td>
+          </tr>
+          <tr>
+            <td>Banano</td>
+            <td>Fruta</td>
+            <td>Día del pedido</td>
+            <td>$3.000 * Kilo</td>
+            <td>(3) Kilos</td>
+            <td>$9.000</td>
+            <td><button class="btn-cancel">❌</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="total">Total a pagar: <strong id="total-productos">$22.000</strong></p>
+    </section>
+
+    <!-- 🔹 Sección transporte -->
+    <section class="card" id="transporte-section">
+      <h3>Servicio de transporte</h3>
+      <table id="tabla-transporte">
+        <thead>
+          <tr>
+            <th>Transportista</th>
+            <th>Fecha</th>
+            <th>Costo * distancia</th>
+            <th>Gasolina</th>
+            <th>Distancia recorrida</th>
+            <th>Total</th>
+            <th>Cancelar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jorge Galvis</td>
+            <td>Día de entrega</td>
+            <td>2.500 * (1) KM</td>
+            <td>3.000 * (1) KM</td>
+            <td>(2) Kilómetros</td>
+            <td>$11.000</td>
+            <td><button class="btn-cancel">❌</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="total">Total a pagar: <strong id="total-transporte">$11.000</strong></p>
+    </section>
+
+    <!-- 🔹 Botones de acción -->
+    <div class="actions">
+      <button class="btn-secondary" id="btn-continuar">⏪ Continuar comprando</button>
+      <button class="btn-primary" id="btn-confirmar">Confirmar pedido ✅</button>
+    </div>
+
+    <!-- 🔹 Historial de ventas -->
+    <section class="card" id="historial-section">
+      <h3>Historial de Ventas</h3>
+      <table id="tabla-historial">
+        <thead>
+          <tr>
+            <th>ID Venta</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Productos</th>
+            <th>Total</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#001</td>
+            <td>Juan Pérez</td>
+            <td>22/08/2025</td>
+            <td>Tomate (2kg), Banano (3kg)</td>
+            <td>$22.000</td>
+            <td>Entregado ✅</td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Ana Gómez</td>
+            <td>23/08/2025</td>
+            <td>Manzana (5kg)</td>
+            <td>$30.000</td>
+            <td>Pendiente ⏳</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- 🔹 Conexión con JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

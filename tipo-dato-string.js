@@ -1,21 +1,37 @@
-//string o cadena de texto
-const sensor = " temperatura";
-const sensor2 = " ph";
+// === TIPOS DE DATOS ===
+let texto = "Tomate";
+let numero = 6500;
+let booleano = true;
+let indefinido;
+let nulo = null;
+let objeto = { nombre: "Banano", precio: 3000 };
+let arreglo = ["Tomate", "Banano", "Mango"];
+function total(p, c) { return p * c; }
+let big = 12345678901234567890n;
 
-// dos formas no tan comunes
-const sensor3 = String('presion');
-const sensor4 = new String('presion');
+console.log("=== TIPOS DE DATOS ===");
+console.log("String:", texto);
+console.log("Number:", numero);
+console.log("Boolean:", booleano);
+console.log("Undefined:", indefinido);
+console.log("Null:", nulo);
+console.log("Object:", objeto);
+console.log("Array:", arreglo);
+console.log("Function (6500x2):", total(6500,2));
+console.log("BigInt:", big);
 
-console.log(sensor);
+// === HISTORIAL DE VENTAS ===
+let ventas = [
+  { cliente:"Neithan", producto:"Tomate", cantidad:3, precio:6500 },
+  { cliente:"Felipe", producto:"Banano", cantidad:5, precio:3000 },
+  { cliente:"María", producto:"Mango", cantidad:2, precio:4500 }
+];
 
-console.log(sensor3);
-
-
-//con typeof se puede ver el tipo de dato
-console.log(typeof sensor2);
-console.log(sensor2);
-
-let product = "televisor de 40\"";
-let product2 = "televisor de 32\"";
-console.log(product);
-console.log(product2);
+console.log("\n=== HISTORIAL DE VENTAS ===");
+ventas.forEach(v => {
+  let sub = v.cantidad * v.precio;
+  let tot = sub * 1.19;
+  console.log(
+    `Cliente: ${v.cliente} | Producto: ${v.producto} | Cantidad: ${v.cantidad} | Precio: ${v.precio} | Subtotal: ${sub} | Total: ${tot}`
+  );
+});
